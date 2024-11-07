@@ -1,0 +1,24 @@
+function insertionSort(arr) {
+  let n = arr.length;
+
+  for (let i = 1; i < n; i++) {
+    // Storing current elements
+    let key = arr[i];
+    let j = i - 1;
+
+
+    while (j >= 0 && arr[j] > key) {
+      arr[j + 1] = arr[j];
+      j = j - 1;
+    }
+   
+    arr[j + 1] = key;
+  }
+  return arr;
+}
+
+// Example 
+  let array = [7, 12, 9, 11, 3];
+  let sortedArray = insertionSort(array);
+
+  console.log(sortedArray); // Output: [3, 7, 9, 11, 12]
